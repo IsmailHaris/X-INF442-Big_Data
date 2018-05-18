@@ -1,0 +1,101 @@
+1) Les programmes apparient (2 à 2) des tâches entre elles puis affichent les résultats des appariements.
+
+2) Je ne remarque pas de différence de sorties entre les deux programmes…
+
+Pour Blocking :
+
+	➜  TD4 mpirun -np 4 mpi_helloBsend                  
+	Hello from task 0 on MacBook-Pro-de-Antoine.local!
+	MASTER: Number of MPI tasks is 4
+	Hello from task 1 on MacBook-Pro-de-Antoine.local!
+	Task 1 is partner with 3
+	Task 0 is partner with 2
+	Hello from task 2 on MacBook-Pro-de-Antoine.local!
+	Task 2 is partner with 0
+	Hello from task 3 on MacBook-Pro-de-Antoine.local!
+	Task 3 is partner with 1
+
+	➜  TD4 mpirun -np 4 mpi_helloBsend 
+	Hello from task 1 on MacBook-Pro-de-Antoine.local!
+	Hello from task 3 on MacBook-Pro-de-Antoine.local!
+	Task 3 is partner with 1
+	Hello from task 0 on MacBook-Pro-de-Antoine.local!
+	MASTER: Number of MPI tasks is 4
+	Task 1 is partner with 3
+	Hello from task 2 on MacBook-Pro-de-Antoine.local!
+	Task 2 is partner with 0
+	Task 0 is partner with 2
+
+	➜  TD4 mpirun -np 4 mpi_helloBsend
+	Hello from task 0 on MacBook-Pro-de-Antoine.local!
+	MASTER: Number of MPI tasks is 4
+	Hello from task 3 on MacBook-Pro-de-Antoine.local!
+	Task 0 is partner with 2
+	Hello from task 2 on MacBook-Pro-de-Antoine.local!
+	Task 2 is partner with 0
+	Hello from task 1 on MacBook-Pro-de-Antoine.local!
+	Task 1 is partner with 3
+	Task 3 is partner with 1
+
+
+Pour NonBlocking :
+
+	➜  TD4 mpirun -np 4 mpi_helloNBsend
+	Hello from task 1 on MacBook-Pro-de-Antoine.local!
+	Task 1 is partner with 3
+	Hello from task 3 on MacBook-Pro-de-Antoine.local!
+	Task 3 is partner with 1
+	Hello from task 0 on MacBook-Pro-de-Antoine.local!
+	MASTER: Number of MPI tasks is 4
+	Task 0 is partner with 2
+	Hello from task 2 on MacBook-Pro-de-Antoine.local!
+	Task 2 is partner with 0
+
+	➜  TD4 mpirun -np 4 mpi_helloNBsend
+	Hello from task 0 on MacBook-Pro-de-Antoine.local!
+	MASTER: Number of MPI tasks is 4
+	Hello from task 3 on MacBook-Pro-de-Antoine.local!
+	Task 3 is partner with 1
+	Hello from task 1 on MacBook-Pro-de-Antoine.local!
+	Task 1 is partner with 3
+	Hello from task 2 on MacBook-Pro-de-Antoine.local!
+	Task 2 is partner with 0
+	Task 0 is partner with 2
+
+	➜  TD4 mpirun -np 4 mpi_helloNBsend
+	Hello from task 0 on MacBook-Pro-de-Antoine.local!
+	MASTER: Number of MPI tasks is 4
+	Task 0 is partner with 2
+	Hello from task 1 on MacBook-Pro-de-Antoine.local!
+	Task 1 is partner with 3
+	Hello from task 2 on MacBook-Pro-de-Antoine.local!
+	Task 2 is partner with 0
+	Hello from task 3 on MacBook-Pro-de-Antoine.local!
+	Task 3 is partner with 1
+
+
+3) Il y a plusieurs conditions if… else
+
+
+if (numtasks % 2 != 0) : // On souhaite apparier (2 par 2) les tâches entre elles. La condition permet donc donc de vérifier qu'on a lancé un nombre pair de tâches.
+
+	if (taskid == MASTER) : // Imbriquée dans la précédente, elle permet d'afficher un message d'erreur ssi la tâche exécutée est la première (0). Cela évite d'avoir plusieurs fois le même message d'erreur. Exemple : si on met n=3 par exemple, on obtient une seule erreur :
+
+		➜  TD4 mpirun -np 3 mpi_helloNBsend
+		Quitting. Need an even number of tasks: numtasks=3
+
+else :
+	
+	if (taskid == MASTER) : // Comme précédemment, cela ne permet d'afficher qu'une seule fois le message qui compte le nombre de tâches en cours.
+
+
+	// Associer les tâches tâchs séparées de n/2 entre elles
+	if (taskid < numtasks / 2) {
+			partner = numtasks / 2 + taskid;
+	} else { // (taskid >= numtasks / 2)
+			partner = taskid - numtasks / 2;
+	}
+
+
+
+4) Un programme uitlise une communication blocante (B), l'autre non (NB)
