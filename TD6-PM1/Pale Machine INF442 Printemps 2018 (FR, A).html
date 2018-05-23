@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Pale Machine INF442 Printemps 2018 (FR, A)</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="enonce-fr-1.tex"> 
+<link rel="stylesheet" type="text/css" href="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-1.css"> 
+</head><body>
+   <div class="maketitle">
+                                                                                    
+
+                                                                                    
+                                                                                    
+
+                                                                                    
+
+<h2 class="titleHead">Pale Machine INF442 Printemps 2018 (FR, A)</h2>
+<div class="author"></div><br>
+<div class="date"></div>
+   </div>
+<h2>Login</h2>
+<!-- login box -->
+<p>
+</p><p>
+Vous devrez déposer votre
+travail <b>au fur et à mesure</b>.
+Avant de pouvoir déposer, il faut s'authentifier&nbsp;:
+</p><p><a name="UPLOAD_LOGIN_FORM"></a></p>
+<form action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#UPLOAD_LOGIN_FORM" method="post" class="EditForm">
+<p>
+<input name="Auth_Action" value="DisConnect" type="hidden">
+Login&nbsp;:&nbsp;antoine.carossio
+<input value="Déconnecter" style="border-radius: 10px; background: #e0e0e0; text-decoration: underline; border: none;" type="submit">
+</p>
+</form>
+
+<p></p>
+   <h3 class="likesectionHead"><a id="x1-1000"></a>Avant de commencer</h3>
+<!--l. 25--><p class="noindent">
+     </p><ul>
+     <li class="compactitem">Lisez attentivement tous les exercices avant de commencer à programmer.<br class="newline">Notez que pour vous aider, des pistes et des exemples de fonctionnement du code sont inclus
+     dans  plusieurs  questions.  Vous  trouverez  des  indications  au  niveau  des  spécifications  des
+     méthodes et des fonctions à mettre en oeuvre. Ces pistes fournissent des suggestions, mais il
+     n’est pas obligatoire de les suivre. Il est également important de lire attentivement le code fourni
+     (classes, fonctions, méthodes, structures de données) et de vous assurez de bien comprendre sa
+     logique - cela facilitera votre tâche.
+     </li>
+     <li class="compactitem">Les points attribués à chaque question et à chaque exercice sont indiqués entre parenthèses.<br class="newline">Notez que la somme de tous les points attribués (si tous les exercices sont completés et corrects)
+     <span class="ptmb8t-x-x-109">est de 25 points</span>, alors que l’épreuve de la Pâle machine n’est notée que <span class="ptmb8t-x-x-109">sur 20 points</span>. Vous
+     n’avez donc pas besoin de compléter tous les exercices pour obtenir la note maximale. <br class="newline">Nous vous conseillons donc, de vous concentrez en priorité sur les exercices pour lesquels vous
+     pouvez progresser le plus rapidement. (Si vous obtenez plus de 20 points, on le prendra en
+     compte dans la partie bonus de la note finale.)
+     </li>
+     <li class="compactitem">Pour  chaque  exercice,  il  est  suggéré  (mais  pas  obligatoire)  de  répondre  aux  questions  dans
+     l’ordre proposé. Notez que les questions ne sont <span class="ptmb8t-x-x-109">pas </span>forcément ordonnées par ordre croissant
+     de leurs difficultés - c.à.d., la dernière question n’est pas toujours la plus difficile.
+     </li>
+     <li class="compactitem">Les questions de chaque exercice sont <span class="ptmb8t-x-x-109">ind</span><span class="ptmb8t-x-x-109">épendantes</span>, c’est-à-dire qu’elles peuvent toujours
+     être  résolues  même  si  les  réponses  précédentes  n’ont  pas  été  implémentées.  Cependant,
+     il  est  <span class="ptmri8t-x-x-109">possible  </span>sur  certaines  questions  d’utiliser  des  fonctions  ou  méthodes  précédemment
+     implémentées.
+     </li>
+     <li class="compactitem">Certaines questions sont un peu plus complexes que les autres - celles-ci sont marquées d’une
+                                                                                    
+
+                                                                                    
+     étoile (e.g. <span class="ptmb8t-x-x-109">Q2</span><sup><span class="cmsy-8">*</span></sup>).
+     </li>
+     <li class="compactitem">Téléchargez et décomprimez le fichier <a href="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/pm-students-a.zip">pm-students-a.zip</a>, qui contient tous les fichiers source
+     que vous allez utiliser dans cette PM.</li></ul>
+<!--l. 36--><p class="noindent">
+   </p><h3 class="sectionHead"><span class="titlemark">1    </span> <a id="x1-20001"></a>Nombres de Stirling (4p)</h3>
+<!--l. 38--><p class="noindent">Étant donnés <span class="cmmi-10x-x-109">k </span>catégories et <span class="cmmi-10x-x-109">n </span>objets, il y a <img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-10x.png" alt="{n}
+ k"> façons de distribuer les objets dans les catégories, telles
+que chaque catégorie a au moins un objet. <img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-11x.png" alt="{n}
+ k"> est le <span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">n,k</span><span class="cmr-10x-x-109">) </span>- nombre de Stirling de la seconde
+espèce.
+<!--l. 1--></p><p class="indent">   Ces nombres se définissent comme suit:
+<!--l. 3--></p><p class="indent">   </p><div class="eqnarray">
+   <center class="math-display">
+<img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-12x.png" alt="{  }          k        (  )
+  n    =   1-&#8721;  (- 1)k-j k jn
+  k        k!            j
+             j=0
+" class="math-display"></center>
+</div>
+<!--l. 7--><p class="indent">
+     </p><dl class="description"><dt class="description">
+<span class="ptmb8t-x-x-109">Q1</span> </dt><dd class="description">(2 points) Complétez le code pour les fonctions <span class="pcrr8t-x-x-109">long Stirling2kind_Explicit(int</span>
+     <span class="pcrr8t-x-x-109">n, int k) </span>et <span class="pcrr8t-x-x-109">long Factorial(int n)</span>.</dd></dl>
+<!--l. 1--><p class="noindent">Ces nombres peuvent également être calculés avec la récurrence suivante:
+<!--l. 3--></p><p class="indent">   </p><div class="eqnarray">
+   <center class="math-display">
+<img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-13x.png" alt="{n  + 1}       {n }   {  n  }
+          =   k     +
+    k           k      k - 1
+" class="math-display"></center>
+                                                                                    
+
+                                                                                    
+</div>
+<p>
+</p><p>
+<a name="INF442-PM1#ex_1a"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_1a" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_1a" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+<!--l. 7--><p class="indent">
+     </p><dl class="description"><dt class="description">
+<span class="ptmb8t-x-x-109">Q2</span> </dt><dd class="description">(2 points) Implémentez cette récurrence dans <span class="pcrr8t-x-x-109">long Stirling2kind_Recurrence(int</span>
+     <span class="pcrr8t-x-x-109">n, int k, int&amp; ncalls)</span>,  où  <span class="pcrr8t-x-x-109">ncalls </span>compte  le  nombre  d’appels  à  la  fonction
+     (c’est-à-dire, à chaque fois que la fonction est appelée, cette variable doit être incrémentée de
+     1). Imposez les conditions initiales <img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-14x.png" alt="{0}
+ 0"> <span class="cmr-10x-x-109">= 1 </span>et <img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-15x.png" alt="{n}
+ 0"> <span class="cmr-10x-x-109">=</span> <img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-16x.png" alt="{0}
+ n"> <span class="cmr-10x-x-109">= 0</span>.</dd></dl>
+<!--l. 46--><p class="noindent">Le résultat du calcul devrait être le même dans les deux questions.
+<!--l. 49--></p><p class="noindent">Vous pouvez tester <span class="ptmb8t-x-x-109">Q1 </span>et <span class="ptmb8t-x-x-109">Q2 </span>avec le programme <span class="pcrr8t-x-x-109">test-stirling</span>. La sortie de <span class="pcrr8t-x-x-109">./test-exo1 </span>avec les
+deux questions complétées doit être comme celle fournie sur <span class="pcrr8t-x-x-109">output-test-stirling.txt</span>.
+</p><p>
+</p><p>
+<a name="INF442-PM1#ex_1b"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_1b" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_1b" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+<!--l. 52--><p class="noindent">
+   </p><h3 class="sectionHead"><span class="titlemark">2    </span> <a id="x1-30002"></a>Mémoire spirale (10p)</h3>
+<!--l. 54--><p class="noindent">Considérons un modèle expérimental de mémoire, dans lequel les cellules sont stockées sur une grille à deux
+dimensions. Chaque cellule de la grille est allouée dans un motif en spirale commençant à l’endroit marqué 1
+et comptant ensuite en spirale vers l’extérieur. Par exemple, les cellules sur une grille <span class="cmr-10x-x-109">5 </span><span class="cmsy-10x-x-109">× </span><span class="cmr-10x-x-109">5 </span>sont alloués
+comme ceci (identifiants de la cellule à gauche; coordonnées de la cellule <span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">i,j</span><span class="cmr-10x-x-109">) </span>à droite, comme stockées
+dans le tableau <span class="pcrr8t-x-x-109">Memory::mem</span>):
+   </p><center class="math-display">
+<img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-17x.png" alt="                   ||
+17  16  15  14  13 ||(0,0 ) (1,0)  (2,0) (3,0)  (4,0)
+18   5   4   3  12 ||(0,1 ) (1,1)  (2,1) (3,1)  (4,1)
+19   6   1   2  11 ||(0,2 ) (1,2)  (2,2) (3,2)  (4,2)
+20   7   8   9  10 ||(0,3 ) (1,3)  (2,3) (3,3)  (4,3)
+21  22  23  24  25 ||(0,4 ) (1,4)  (2,4) (3,4)  (4,4)
+                   ||
+" class="math-display"></center>
+<!--l. 67--><p class="nopar">
+<!--l. 69--></p><p class="indent">   Cela est très efficace en termes d’espace mémoire car aucune cellule n’est ignorée. Cependant, les
+données doivent être reportées sur la cellule 1 (l’emplacement du seul accès port pour ce système de
+mémoire) par des programmes qui peuvent seulement se déplacer à gauche (<span class="pcrr8t-x-x-109">left</span>), à droite (<span class="pcrr8t-x-x-109">right</span>),
+monter (<span class="pcrr8t-x-x-109">up</span>) ou descendre (<span class="pcrr8t-x-x-109">down</span>) dans la grille.
+     </p><dl class="description"><dt class="description">
+<span class="ptmb8t-x-x-109">Q1</span> </dt><dd class="description">(2 points) Implémentez la méthode <span class="pcrr8t-x-x-109">Memory::printGrid()</span>. Cette méthode devrait afficher
+     l’identifiant de la cellule (en notation décimale) et son contenu (en <span class="ptmb8t-x-x-109">hexad</span><span class="ptmb8t-x-x-109">écimale</span>), pour toutes
+     les cellules en mémoire.
+     <!--l. 4--><p class="noindent">Utilisez  exactement  2  chiffres  (décimaux)  pour  l’identifiant  de  la  cellule,  et  exactement  8
+     chiffres (hexadécimaux) pour le contenu de la cellule. Vous pouvez utiliser <span class="pcrr8t-x-x-109">printf() </span>pour
+     formater la sortie (vous avez le spécificateur <span class="pcrr8t-x-x-109">x </span>pour la représentation hexadécimale). Laissez 2
+     espaces (<span class="pcrr8t-x-x-109">~~</span>) entre deux cellules consécutives. N’ajoutez pas d’espace superflu.
+                                                                                    
+
+                                                                                    
+     <!--l. 6--></p><p class="noindent"><span class="paragraphHead"><a id="x1-40002"></a><span class="ptmb8t-x-x-109">Exemple de fonctionnement</span></span>
+     Vous pouvez comparer la sortie de <span class="pcrr8t-x-x-109">test-spiral-q1-print </span>(<span class="pcrr8t-x-x-109">./testexo2q1-print &gt;</span>
+     <span class="pcrr8t-x-x-109">output.txt</span>, où <span class="pcrr8t-x-x-109">output.txt </span>est votre fichier sortie) avec le fichier <span class="pcrr8t-x-x-109">ref-output-spiral-q1.txt</span>
+     (fourni), en utilisant la commande Linux <span class="pcrr8t-x-x-109">diff </span>(<span class="pcrr8t-x-x-109">diff output.txt ref-output-spiral-q1.txt</span>).
+     Le programme <span class="pcrr8t-x-x-109">testexo2q1 </span>doit afficher une grille de mémoire <span class="cmr-10x-x-109">5 </span><span class="cmsy-10x-x-109">× </span><span class="cmr-10x-x-109">5 </span>après avoir initialisé toutes les
+     cellules (= 0), et rempli certaines cellules avec des valeurs (cellule 2 avec la valeur 123456 (hex
+     <span class="pcrr8t-x-x-109">0x1e4b</span>), cellule 7 avec la valeur 5678654 (hex <span class="pcrr8t-x-x-109">56a63e</span>), cellule 13 avec la valeur 987654 (hex
+     <span class="pcrr8t-x-x-109">f1206</span>) et cellule 21 avec la valeur 55555 (hex <span class="pcrr8t-x-x-109">d903</span>)).</p></dd></dl>
+<!--l. 12--><p class="noindent">Les méthodes <span class="pcrr8t-x-x-109">Cell * Cell::MoveToNext () </span>et <span class="pcrr8t-x-x-109">Cell * Cell::MoveToNext (string *</span>
+<span class="pcrr8t-x-x-109">direction)</span>, (fournies toutes les deux), renvoient un pointeur sur la cellule suivante dans la grille de toute
+cellule valide (suivant la marche en spirale). Quand un pointeur <span class="pcrr8t-x-x-109">string * direction </span>est fourni, la
+méthode indique dans <span class="pcrr8t-x-x-109">* direction </span>la direction du mouvement vers la cellule suivante (avec <span class="pcrr8t-x-x-109">right</span>,
+<span class="pcrr8t-x-x-109">left</span>, <span class="pcrr8t-x-x-109">up</span>, ou <span class="pcrr8t-x-x-109">down</span>).
+</p><p>
+</p><p>
+<a name="INF442-PM1#ex_2a"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_2a" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_2a" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+<!--l. 17--><p class="indent">
+     </p><dl class="description"><dt class="description">
+<span class="ptmb8t-x-x-109">Q2</span> </dt><dd class="description">(2 points) Utilisez cette méthode pour implémenter la fonction <span class="pcrr8t-x-x-109">Cell * WalkByNext (Cell</span>
+     <span class="pcrr8t-x-x-109">* src, int dest)</span>.  Cette  fonction  prend  comme  arguments  la  cellule  de  départ  (<span class="pcrr8t-x-x-109">src</span>)
+     et  l’identifiant  de  la  cellule  de  destination  (<span class="pcrr8t-x-x-109">dest</span>).  Vous  pouvez  supposer  que  la  cellule  de
+     destination avec l’identifiant <span class="pcrr8t-x-x-109">dest </span>est accessible depuis <span class="pcrr8t-x-x-109">src</span>. La fonction affiche, pour chaque
+     cellule du parcours, son identifiant et son mouvement (avec le format (<span class="pcrr8t-x-x-109">[id] dir</span>), où <span class="pcrr8t-x-x-109">id </span>est
+     l’identifiant de la cellule (par exemple, 2, 3, 4, etc.) et <span class="pcrr8t-x-x-109">dir </span>est <span class="pcrr8t-x-x-109">right</span>, <span class="pcrr8t-x-x-109">left</span>, <span class="pcrr8t-x-x-109">up </span>ou <span class="pcrr8t-x-x-109">down</span>; la
+     fonction affiche aussi la destination (avec format <span class="pcrr8t-x-x-109">[id]</span>, et elle renvoie un pointeur sur la cellule
+     de destination. N’ajoutez pas des spaces supplémentaires.
+     <!--l. 21--><p class="noindent"><span class="paragraphHead"><a id="x1-50002"></a><span class="ptmb8t-x-x-109">Piste</span></span>
+     Utilisez l’argument <span class="pcrr8t-x-x-109">direction </span>(pointeur) dans <span class="pcrr8t-x-x-109">Cell * Cell::MoveToNext (string *</span>
+     <span class="pcrr8t-x-x-109">direction)</span>, pour afficher la direction de chaque mouvement.
+     <!--l. 23--></p><p class="noindent"><span class="paragraphHead"><a id="x1-60002"></a><span class="ptmb8t-x-x-109">Exemple de fonctionnement</span></span>
+     Vous pouvez tester votre implémentation avec le programme <span class="pcrr8t-x-x-109">test-spiral-q2-next</span>. La sortie de
+     ce programme (<span class="pcrr8t-x-x-109">make test-spiral-q2-next; ./test-spiral-q2-next</span>) devrait être
+     comme suit:
+                                                                                    
+
+                                                                                    
+     </p><div class="verbatim" id="verbatim-1">
+     Walking&nbsp;through&nbsp;the&nbsp;spiral&nbsp;:
+     &nbsp;<br>&nbsp;&nbsp;Starting&nbsp;position&nbsp;id&nbsp;is&nbsp;1,&nbsp;intended&nbsp;destination&nbsp;23
+     &nbsp;<br>&nbsp;&nbsp;Path&nbsp;:&nbsp;[1]&nbsp;right&nbsp;[2]&nbsp;up&nbsp;[3]&nbsp;left&nbsp;[4]&nbsp;left&nbsp;[5]&nbsp;down&nbsp;[6]&nbsp;down&nbsp;[7]&nbsp;right&nbsp;[8]&nbsp;right&nbsp;[9]&nbsp;right&nbsp;[10]&nbsp;up&nbsp;[11]&nbsp;up&nbsp;[12]&nbsp;up&nbsp;[13]&nbsp;left&nbsp;[14]&nbsp;left&nbsp;[15]&nbsp;left&nbsp;[16]&nbsp;left&nbsp;[17]&nbsp;down&nbsp;[18]&nbsp;down&nbsp;[19]&nbsp;down&nbsp;[20]&nbsp;down&nbsp;[21]&nbsp;right&nbsp;[22]&nbsp;right&nbsp;[23]
+
+     &nbsp;<br>&nbsp;&nbsp;Position&nbsp;in&nbsp;dest&nbsp;is&nbsp;:&nbsp;23
+     &nbsp;<br>
+     &nbsp;<br>&nbsp;&nbsp;Starting&nbsp;position&nbsp;id&nbsp;is&nbsp;6,&nbsp;intended&nbsp;destination&nbsp;10
+     &nbsp;<br>&nbsp;&nbsp;Path&nbsp;:&nbsp;[6]&nbsp;down&nbsp;[7]&nbsp;right&nbsp;[8]&nbsp;right&nbsp;[9]&nbsp;right&nbsp;[10]
+     &nbsp;<br>&nbsp;&nbsp;Position&nbsp;in&nbsp;dest&nbsp;is&nbsp;:&nbsp;10
+</div>
+     <!--l. 34--><p class="nopar"></p></dd></dl>
+<!--l. 37--><p class="indent">   Avec la fonction <span class="pcrr8t-x-x-109">WalkByNext() </span>de <span class="ptmb8t-x-x-109">Q2 </span>(<span class="cmr-10x-x-109">1 </span><span class="cmsy-10x-x-109">&#8594; </span><span class="cmr-10x-x-109">2 </span><span class="cmsy-10x-x-109">&#8594; </span><span class="cmr-10x-x-109">3 </span><span class="cmsy-10x-x-109">&#8594; </span><span class="cmr-10x-x-109">4 </span><span class="cmsy-10x-x-109">&#8594;</span><img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-18x.png" alt="&#8901;&#8901;&#8901;" class="@cdots"><span style="margin-left:0.3em" class="thinspace"></span>), tout programme peut accéder à la
+cellule de mémoire <span class="cmmi-10x-x-109">n </span>avec <span class="cmmi-10x-x-109">n </span>mouvements depuis l’origine, tout en marchant en spirale. Ce coût peut être
+réduit si les mouvements permis (haut, bas, droite, gauche) se produisent dans le chemin le plus court (dans la
+grille) entre la cellule de départ et la destination. Dans l’exemple ci-dessus, en considérant 1 comme cellule
+de départ,
+<!--l. 44--></p><p class="indent">
+     </p><ul>
+     <li class="compactitem">Les données de la cellule 1 seraient transportées en 0 étapes.
+     </li>
+     <li class="compactitem">Les données de la cellule 12 seraient transportées en 3 étapes: down, left, left.
+     </li>
+     <li class="compactitem">Les données de la cellule 23 seraient transportées en seulement 2 étapes: up, up.</li></ul>
+<p>
+</p><p>
+<a name="INF442-PM1#ex_2b"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_2b" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_2b" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+<!--l. 49--><p class="indent">
+     </p><dl class="description"><dt class="description">
+<span class="ptmb8t-x-x-109">Q3</span> </dt><dd class="description">(2 points) Implémentez la méthode <span class="pcrr8t-x-x-109">Cell::WalkTo(Cell * src, int &amp;dist, Cell</span>
+     <span class="pcrr8t-x-x-109">* dst)</span>.  Cette  méthode  doit  commencer  à  la  cellule  <span class="pcrr8t-x-x-109">src </span>et  parcourir  la  spirale  jusqu’à
+     la  cellule  de  destination  <span class="pcrr8t-x-x-109">dst</span>.  Cela  tout  en  affichant  les  cellules  traversées  et  chacun  des
+     mouvements exécutés (up, down, left, right) pendant le parcours. Le formatage doit être comme
+     en <span class="ptmb8t-x-x-109">Q2</span>, <span class="pcrr8t-x-x-109">[id] mov</span>, où <span class="pcrr8t-x-x-109">id </span>est l’identifiant de la cellule traversée et <span class="pcrr8t-x-x-109">mov </span>est <span class="pcrr8t-x-x-109">up</span>, <span class="pcrr8t-x-x-109">down</span>, <span class="pcrr8t-x-x-109">right</span>,
+     ou <span class="pcrr8t-x-x-109">left</span>, la destination doit aussi être montrée, avec format <span class="pcrr8t-x-x-109">[id] </span>(voir infra pour un example).
+     La fonction doit aussi actualiser la valeur de <span class="pcrr8t-x-x-109">dist</span>. En cas d’égalité entre deux mouvements
+     possibles,  on  préfère  <span class="pcrr8t-x-x-109">right </span>sur  <span class="pcrr8t-x-x-109">up</span>,  <span class="pcrr8t-x-x-109">up </span>sur  <span class="pcrr8t-x-x-109">left</span>,  et  <span class="pcrr8t-x-x-109">left </span>sur  <span class="pcrr8t-x-x-109">down</span>.  N’ajoutez  pas  des
+     spaces supplémentaires.
+     <!--l. 53--><p class="noindent"><span class="paragraphHead"><a id="x1-70002"></a><span class="ptmb8t-x-x-109">Exemple de fonctionnement</span></span>
+     Le résultat de l’appel <span class="pcrr8t-x-x-109">WalkTo() </span>de la cellule 2 à la cellule 14 doit être comme suit
+     (<span class="pcrr8t-x-x-109">test-spiral-q3-shp</span>):
+                                                                                    
+
+                                                                                    
+     </p><div class="verbatim" id="verbatim-2">
+     Walk&nbsp;within&nbsp;shortest&nbsp;path&nbsp;:
+     &nbsp;<br>&nbsp;&nbsp;Starting&nbsp;position&nbsp;id&nbsp;is&nbsp;2
+     &nbsp;<br>&nbsp;&nbsp;Path&nbsp;:&nbsp;[2]&nbsp;up&nbsp;[3]&nbsp;up&nbsp;[14]
+     &nbsp;<br>&nbsp;&nbsp;Arrived&nbsp;to&nbsp;14
+     &nbsp;<br>&nbsp;&nbsp;Total&nbsp;distance:&nbsp;2
+</div>
+     <!--l. 61--><p class="nopar">avec <span class="pcrr8t-x-x-109">dist </span>= 2 et la méthode retournant un pointeur vers la cellule de destination.
+     <!--l. 64--></p><p class="noindent"><span class="paragraphHead"><a id="x1-80002"></a><span class="ptmb8t-x-x-109">Piste</span></span>
+     Cette méthode peut être implémentée de façon récursive; les méthodes (fournies) <span class="pcrr8t-x-x-109">DistanceTo() </span>et
+     <span class="pcrr8t-x-x-109">MoveUp()</span>, <span class="pcrr8t-x-x-109">MoveDown()</span>, etc., peuvent être utilisées.
+     </p></dd>
+<p>
+</p><p>
+<a name="INF442-PM1#ex_2c"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_2c" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_2c" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+<dt class="description">
+<span class="ptmb8t-x-x-109">Q4</span><sup><span class="cmsy-8">*</span></sup> </dt><dd class="description">(2 points) Comment implémenteriez-vous le calcul de la distance, dans la grille, entre deux cellules
+     mémoire, cela sans utiliser les méthodes et les variables fournies par les classes <span class="pcrr8t-x-x-109">Cell </span>et <span class="pcrr8t-x-x-109">Memory</span>?
+     Implémentez la fonction <span class="pcrr8t-x-x-109">int distanceBetween(int id_a, int id_b, int side)</span>.
+     Notez qu’aucun objet ni aucune méthode de <span class="pcrr8t-x-x-109">Cell </span>ne sont utilisés dans ce cas. Cette fonction doit
+     renvoyer la distance (dans la grille, c’est-à-dire <span class="cmmi-10x-x-109">d</span><span class="cmr-10x-x-109">((</span><span class="cmmi-10x-x-109">x</span><sub><span class="cmr-8">1</span></sub><span class="cmmi-10x-x-109">,y</span><sub><span class="cmr-8">1</span></sub><span class="cmr-10x-x-109">)</span><span class="cmmi-10x-x-109">,</span><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">x</span><sub><span class="cmr-8">2</span></sub><span class="cmmi-10x-x-109">,y</span><sub><span class="cmr-8">2</span></sub><span class="cmr-10x-x-109">)) = </span><span class="cmsy-10x-x-109">|</span><span class="cmmi-10x-x-109">y</span><sub><span class="cmr-8">2</span></sub> <span class="cmsy-10x-x-109">-</span><span class="cmmi-10x-x-109">y</span><sub><span class="cmr-8">1</span></sub><span class="cmsy-10x-x-109">| </span><span class="cmr-10x-x-109">+ </span><span class="cmsy-10x-x-109">|</span><span class="cmmi-10x-x-109">x</span><sub><span class="cmr-8">2</span></sub> <span class="cmsy-10x-x-109">-</span><span class="cmmi-10x-x-109">x</span><sub><span class="cmr-8">1</span></sub><span class="cmsy-10x-x-109">|</span>) entre les
+     cellules avec id <span class="pcrr8t-x-x-109">id_a </span>et <span class="pcrr8t-x-x-109">id_b</span>. Si les positions des cellules <span class="pcrr8t-x-x-109">id_a </span>et / ou <span class="pcrr8t-x-x-109">id_b </span>n’appartiennent
+     pas au rang d’identifiants de la grille <span class="pcrr8t-x-x-109">[1, side * side]</span>, la fonction doit retourner
+     -1.
+     <!--l. 69--><p class="noindent"><span class="paragraphHead"><a id="x1-90002"></a><span class="ptmb8t-x-x-109">Piste</span></span>
+     Vous pouvez émuler la marche à travers la spirale, et compter les mouvements dans <span class="pcrr8t-x-x-109">x </span>et dans <span class="pcrr8t-x-x-109">y </span>que
+     vous effectuez depuis la première position (la plus proche de l’origine), en direction à la
+     seconde.
+     <!--l. 71--></p><p class="noindent"><span class="paragraphHead"><a id="x1-100002"></a><span class="ptmb8t-x-x-109">Exemple de fonctionnement</span></span>
+     Vous pouvez tester avec le programme <span class="pcrr8t-x-x-109">test-spiral-q4-dis </span>(sur une grille mémoire de 5 <span class="cmsy-10x-x-109">×</span><span class="cmr-10x-x-109">5</span>); la
+     sortie de <span class="pcrr8t-x-x-109">./test-spiral-q4-dis </span>doit être:
+                                                                                    
+
+                                                                                    
+     </p><div class="verbatim" id="verbatim-3">
+     Distances&nbsp;on&nbsp;a&nbsp;5x5&nbsp;grid:
+     &nbsp;<br>&nbsp;&nbsp;From&nbsp;position&nbsp;id&nbsp;1&nbsp;to&nbsp;position&nbsp;id&nbsp;23,&nbsp;distance&nbsp;is&nbsp;2
+     &nbsp;<br>&nbsp;&nbsp;From&nbsp;position&nbsp;id&nbsp;2&nbsp;to&nbsp;position&nbsp;id&nbsp;14,&nbsp;distance&nbsp;is&nbsp;2
+     &nbsp;<br>&nbsp;&nbsp;From&nbsp;position&nbsp;id&nbsp;3&nbsp;to&nbsp;position&nbsp;id&nbsp;21,&nbsp;distance&nbsp;is&nbsp;6
+     &nbsp;<br>&nbsp;&nbsp;From&nbsp;position&nbsp;id&nbsp;5&nbsp;to&nbsp;position&nbsp;id&nbsp;11,&nbsp;distance&nbsp;is&nbsp;4
+     &nbsp;<br>&nbsp;&nbsp;From&nbsp;position&nbsp;id&nbsp;13&nbsp;to&nbsp;position&nbsp;id&nbsp;9,&nbsp;distance&nbsp;is&nbsp;4
+     &nbsp;<br>&nbsp;&nbsp;From&nbsp;position&nbsp;id&nbsp;15&nbsp;to&nbsp;position&nbsp;id&nbsp;28,&nbsp;requested&nbsp;position(s)&nbsp;not&nbsp;found&nbsp;in&nbsp;the&nbsp;grid.
+
+     &nbsp;<br>&nbsp;&nbsp;
+</div>
+     <!--l. 81--><p class="nopar"></p></dd></dl>
+<!--l. 84--><p class="noindent">Nous voulons maintenant stocker des valeurs dans le contenu des cellules de mémoire (variable <span class="pcrr8t-x-x-109">Cell::c</span>,
+<span class="pcrr8t-x-x-109">int</span>), comme suit:
+     </p><ul>
+     <li class="compactitem">Premièrement, toutes les cellules sont initialisées à la valeur 0.
+     </li>
+     <li class="compactitem">Dans la cellule 1, nous stockons la valeur 1.
+     </li>
+     <li class="compactitem">Dans les cellules suivantes, suivant l’ordre de la spirale, le contenu est la somme des valeurs de
+     toutes les cellules adjacentes (y compris les diagonales).</li></ul>
+<!--l. 91--><p class="noindent">Une fois qu’une valeur non-nul est écrite sur la cellule, la valeur de la cellule ne change plus.
+<!--l. 93--></p><p class="noindent"><span class="paragraphHead"><a id="x1-110002"></a><span class="ptmb8t-x-x-109">Exemple de fonctionnement</span></span>
+   Dans une grille <span class="cmr-10x-x-109">5 </span><span class="cmsy-10x-x-109">× </span><span class="cmr-10x-x-109">5</span>, tout en commençant à la cellule 1, les valeurs des cellules sont déterminées comme
+suit:
+     </p><ul>
+     <li class="compactitem">On initialise la cellule 1 avec la valeur 1.
+     </li>
+     <li class="compactitem">La  cellule  2  n’a  qu’une  seule  cellule  remplie  adjacente  (avec  la  valeur  1),  donc  elle  stocke
+     également 1.
+     </li>
+     <li class="compactitem">La cellule 3 a les deux cellules antérieures (1 et 2) comme voisines, on stocke donc la somme
+     de leurs valeurs, 2, dans la cellule 3.
+     </li>
+     <li class="compactitem">La cellule 4 a pour voisines les trois cellules mentionnées ci-dessus, on stocke donc la somme
+     de leurs valeurs, 4.
+     </li>
+     <li class="compactitem">La cellule 5 n’a que la première (avec la valeur 1) et la quatrième cellules (avec la valeur 4)
+     comme voisines, donc on y stocke la valeur 5.</li></ul>
+<!--l. 103--><p class="indent">   Après le remplissage, les cellules doivent avoir les valeurs suivantes:
+   </p><center class="math-display">
+<img src="Pale%20Machine%20INF442%20Printemps%202018%20%28FR,%20A%29_files/enonce-fr-19x.png" alt="147  142  133  122   59
+304    5    4    2   57
+330   10    1    1   54
+351   11   23   25   26
+362  747  806  880  931
+" class="math-display"></center>
+<!--l. 112--><p class="nopar">
+<!--l. 114--></p><p class="indent">
+</p><p>
+</p><p>
+<a name="INF442-PM1#ex_2d"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_2d" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_2d" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+     <dl class="description"><dt class="description">
+<span class="ptmb8t-x-x-109">Q5</span> </dt><dd class="description">(2   points)   Implémentez   la   fonction   <span class="pcrr8t-x-x-109">int FillWithSumOfAdjacent(Memory * m,</span>
+     <span class="pcrr8t-x-x-109">Cell * cell, int thres)</span>,  où  <span class="pcrr8t-x-x-109">m </span>est  la  grille  de  la  mémoire,  <span class="pcrr8t-x-x-109">cell </span>est  la  cellule  de
+     départ de la procédure et <span class="pcrr8t-x-x-109">thres </span>est une valeur de seuil. La fonction doit remplir toutes les
+     cellules de la mémoire selon les règles ci-dessus, et doit retourner la première valeur enregistrée
+     qui est plus grande que <span class="pcrr8t-x-x-109">thres</span>, si elle existe (autrement elle doit retourner -1).
+     <!--l. 117--><p class="noindent"><span class="paragraphHead"><a id="x1-120002"></a><span class="ptmb8t-x-x-109">Piste</span></span>
+     Vous pouvez utiliser les méthodes <span class="pcrr8t-x-x-109">MoveUp()</span>, <span class="pcrr8t-x-x-109">MoveDown()</span>, etc., et la méthode <span class="pcrr8t-x-x-109">MoveToNext()</span>
+     (toutes fournies). Cependant, il est aussi possible de mettre en place <span class="pcrr8t-x-x-109">FillWithSumOfAdjacent()</span>
+     sans utiliser ces méthodes.
+     <!--l. 119--></p><p class="noindent"><span class="paragraphHead"><a id="x1-130002"></a><span class="ptmb8t-x-x-109">Exemple de fonctionnement</span></span>
+     Vous pouvez tester cette fonction avec le programme <span class="pcrr8t-x-x-109">test-spiral-q5-adj</span>. Ce programme utilise
+     une grille <span class="cmr-10x-x-109">8 </span><span class="cmsy-10x-x-109">× </span><span class="cmr-10x-x-109">8 </span>et renvoie la première valeur stockée dans une cellule de mémoire, qui
+     est plus grande que 125000. La valeur renvoyée doit être 128204 (valeur hexadécimale
+     <span class="pcrr8t-x-x-109">1f4cc</span>).</p></dd></dl>
+<p>
+</p><p>
+<a name="INF442-PM1#ex_2e"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_2e" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_2e" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+<!--l. 75--><p class="noindent">
+   </p><h3 class="sectionHead"><span class="titlemark">3    </span> <a id="x1-140003"></a>Packet Exchange and Knot Hashing (7p)</h3>
+<!--l. 77--><p class="noindent">Un protocole réseau est utilisé pour élire un contrôleur dans un réseau de dispositifs connectés. Cela grâçe
+aux echanges de paquets entre les dispositifs du réseau. Ces paquets, notés <span class="cmmi-10x-x-109">p</span>, peuvent être représentés
+comme des tuples <span class="cmmi-10x-x-109">p </span><span class="cmr-10x-x-109">= (</span><span class="cmmi-10x-x-109">cid,cost,dev,port</span><span class="cmr-10x-x-109">)</span>, où <span class="cmmi-10x-x-109">cid </span>est l’identifiant du contrôleur, <span class="cmmi-10x-x-109">cost </span>est le coût (en
+hops) pour atteindre ce contrôleur à partir du dispositif transmetteur, <span class="cmmi-10x-x-109">dev </span>est l’identifiant du
+dispositif transmettant le paquet <span class="cmmi-10x-x-109">p</span>, et <span class="cmmi-10x-x-109">port </span>est le port du dispositif par lequel ce paquet est transmis
+<span class="footnote-mark"><a href="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/enonce-fr-12.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a id="x1-14001f1"></a>.
+<!--l. 2--></p><p class="noindent">Un paquet <span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub> est plus petit que le paquet <span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">B</span></sub> si et seulement si (ordre lexicographique):
+                                                                                    
+
+                                                                                    
+     </p><ul>
+     <li class="compactitem"><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cid</span><span class="cmr-10x-x-109">) </span><span class="cmmi-10x-x-109">&lt; p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cid</span><span class="cmr-10x-x-109">)</span>, ou bien
+     </li>
+     <li class="compactitem"><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cid</span><span class="cmr-10x-x-109">) == </span><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cid</span><span class="cmr-10x-x-109">) </span>et <span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cost</span><span class="cmr-10x-x-109">) </span><span class="cmmi-10x-x-109">&gt; p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cost</span><span class="cmr-10x-x-109">)</span>, ou bien
+     </li>
+     <li class="compactitem"><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cid</span><span class="cmr-10x-x-109">) == </span><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cid</span><span class="cmr-10x-x-109">) </span>et <span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cost</span><span class="cmr-10x-x-109">) == </span><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cost</span><span class="cmr-10x-x-109">) </span>et <span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">dev</span><span class="cmr-10x-x-109">) </span><span class="cmmi-10x-x-109">&lt; p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">dev</span><span class="cmr-10x-x-109">)</span>, ou bien
+     </li>
+     <li class="compactitem"><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cid</span><span class="cmr-10x-x-109">) == </span><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cid</span><span class="cmr-10x-x-109">) </span>et <span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cost</span><span class="cmr-10x-x-109">) == </span><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">cost</span><span class="cmr-10x-x-109">) </span>et <span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">dev</span><span class="cmr-10x-x-109">) == </span><span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">dev</span><span class="cmr-10x-x-109">) </span>et <span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">A</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">port</span><span class="cmr-10x-x-109">) ==</span>
+     <span class="cmmi-10x-x-109">p</span><sub><span class="cmmi-8">B</span></sub><span class="cmr-10x-x-109">(</span><span class="cmmi-10x-x-109">port</span><span class="cmr-10x-x-109">)</span>.</li></ul>
+<!--l. 11--><p class="indent">   Considérons maintenant la classe <span class="pcrr8t-x-x-109">Packet</span>:
+     </p><dl class="description"><dt class="description">
+<span class="ptmb8t-x-x-109">Q1</span> </dt><dd class="description">(2 points) Implémentez cet ordre lexicographique dans la méthode <span class="pcrr8t-x-x-109">compare(Packet * b)</span>
+     de la classe <span class="pcrr8t-x-x-109">Packet</span>. <br class="newline">Cette méthode doit renvoyer -1 si le paquet d’origine est plus petit que le paquet <span class="pcrr8t-x-x-109">b</span>, 0 s’ils sont
+     égaux et 1 si <span class="pcrr8t-x-x-109">b </span>est plus petit que le paquet original. Aussi, surchargez les opérateurs <span class="cmmi-10x-x-109">&gt;</span>, <span class="cmr-10x-x-109">== </span>et
+     <span class="cmmi-10x-x-109">&lt; </span>pour permettre des comparaisons entre les objets <span class="pcrr8t-x-x-109">Packet</span>.
+     </dd><dt class="description">
+<p>
+</p><p>
+<a name="INF442-PM1#ex_3a"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_3a" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_3a" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+<span class="ptmb8t-x-x-109">Q2</span> </dt><dd class="description">(2    points)    Implémentez    la    méthode    <span class="pcrr8t-x-x-109">map &lt;int, Packet *&gt; Packet::forward</span>
+     <span class="pcrr8t-x-x-109">(vector &lt;int&gt; ports)</span>, <br class="newline">Où <span class="pcrr8t-x-x-109">vector &lt;int&gt; ports </span>est le vecteur des ports sur lesquels le <span class="pcrr8t-x-x-109">Packet </span>mis à jour doit
+     être transmis. Cette méthode retourne un objet <span class="pcrr8t-x-x-109">map </span>qui fait correspondre chaque port indiqué
+     à un pointeur vers le paquet à transmettre par ce même port.</dd></dl>
+<!--l. 21--><p class="noindent"><span class="paragraphHead"><a id="x1-150003"></a><span class="ptmb8t-x-x-109">Exemple de fonctionnement</span></span>
+   Vous pouvez tester <span class="ptmb8t-x-x-109">Q1 </span>et <span class="ptmb8t-x-x-109">Q2 </span>avec le programme <span class="pcrr8t-x-x-109">test-hash-q12-exch.cpp</span>.<br class="newline">Ce programme émule le traitement des paquets dans un dispositif réseau, ayant comme identifiant <span class="pcrr8t-x-x-109">[2] </span>et
+deux ports <span class="pcrr8t-x-x-109">20 </span>et <span class="pcrr8t-x-x-109">21</span>. Le dispositif <span class="pcrr8t-x-x-109">[2] </span>est connecté aux deux dispositifs <span class="pcrr8t-x-x-109">[3] </span>(via le port <span class="pcrr8t-x-x-109">31</span>) et <span class="pcrr8t-x-x-109">[1] </span>(via le
+port <span class="pcrr8t-x-x-109">10</span>), respectivement. La sortie du programme <span class="pcrr8t-x-x-109">test-hash-q12-exch </span>doit être comme
+suit:
+                                                                                    
+
+                                                                                    
+   </p><div class="verbatim" id="verbatim-4">
+[&nbsp;2]&nbsp;Bootstrap
+&nbsp;<br>[&nbsp;2]&nbsp;Elected&nbsp;controller&nbsp;:&nbsp;2
+&nbsp;<br>[&nbsp;2]&nbsp;Transmitted&nbsp;packet&nbsp;2,0,2,20&nbsp;over&nbsp;port&nbsp;20
+&nbsp;<br>[&nbsp;2]&nbsp;Transmitted&nbsp;packet&nbsp;2,0,2,21&nbsp;over&nbsp;port&nbsp;21
+&nbsp;<br>[&nbsp;2]&nbsp;Received&nbsp;packet&nbsp;3,0,3,31&nbsp;over&nbsp;port&nbsp;20&nbsp;...ignore
+&nbsp;<br>[&nbsp;2]&nbsp;Received&nbsp;packet&nbsp;1,0,1,10&nbsp;over&nbsp;port&nbsp;21&nbsp;...update
+&nbsp;<br>[&nbsp;2]&nbsp;Elected&nbsp;controller&nbsp;:&nbsp;1
+&nbsp;<br>[&nbsp;2]&nbsp;Transmitted&nbsp;packet&nbsp;1,1,1,10&nbsp;over&nbsp;port&nbsp;20
+</div>
+<!--l. 33--><p class="nopar">
+<!--l. 36--></p><p class="indent">   Les paquets échangés dans le réseau sont enregistrés dans une base de données à des fins de contrôle.
+Mais, au lieu d’enregistrer le contenu complet du paquet, seulement un hash de l’information pertinente de
+chaque paquet est stocké. Le reste de l’exercice se concentre sur le <span class="ptmb8t-x-x-109">knot hashing</span>, une technique de hash
+particulière pour les chaînes de caractères (strings).<br class="newline">
+<!--l. 38--></p><p class="indent">   Knot hashing est une méthode de hash qui simule l’attachement d’un noeud dans un cercle de chaînes de
+caractères (strings) avec un nombre fixe de marques dessus (par exemple 256). À partir de l’input à hasher, la
+fonction sélectionne à plusieurs reprises, un sous-ensemble du string d’entrée, joint les extrêmes
+de cette sous-chaîne, et fait un demi-tour pour inverser l’ordre des marques à l’intérieur de ce
+sous-ensemble (voir infra pour une description plus détaillée). Après avoir fait ceci plusieurs fois,
+l’ordre des marques est utilisé pour produire un “sparse hash” qui servira à construire le hash
+résultant.
+<!--l. 40--></p><p class="indent">   La classe <span class="pcrr8t-x-x-109">KnotHash </span>permet de produire des hashes de noeuds d’un vecteur de caractères <span class="pcrr8t-x-x-109">line </span>donné.
+Le constructeur d’un objet <span class="pcrr8t-x-x-109">KnowHash </span>assigne le vecteur <span class="pcrr8t-x-x-109">line</span>à son vecteur public <span class="pcrr8t-x-x-109">lgts</span>, et ajoute
+quelques characters additionnels. La variable <span class="pcrr8t-x-x-109">module </span>est la longueur des sous-ensembles de string
+considérées (dans cet exercice 255), et <span class="pcrr8t-x-x-109">shrink </span>(dans cet exercice 16) représente la longueur du
+“sparse hashes” qui sont combinés ensemble (avec des XORs) pour produire le hash final résultant
+(dense).
+<!--l. 42--></p><p class="indent">   Le hashing est implémenté dans la méthode <span class="pcrr8t-x-x-109">KnotHash::getHash (int module, int</span>
+<span class="pcrr8t-x-x-109">shrink)</span>. Cette méthode prend comme arguments <span class="pcrr8t-x-x-109">module </span>et <span class="pcrr8t-x-x-109">shrink</span>, et retourne le hash du vecteur
+d’entrée <span class="pcrr8t-x-x-109">lgts</span>.<br class="newline">Cette méthode prend le vecteur de chars <span class="pcrr8t-x-x-109">lgts</span>, et effectue 64 tours, en utilisant la méthode <span class="pcrr8t-x-x-109">vector &lt;int&gt;</span>
+<span class="pcrr8t-x-x-109">KnotHash::singleRound (module int, int&amp; skip, int&amp; position, int&amp;</span>
+<span class="pcrr8t-x-x-109">addpos)</span>. Chaque tour itère sur ce même vecteur d’entrée <span class="pcrr8t-x-x-109">lgts</span>; voir ci-dessous pour une description
+détaillée d’un tour. Le résultat des 64 tours est le “sparse hash”, ce hash est ensuite compacté dans <span class="pcrr8t-x-x-109">shrink</span>
+(16) nombres, chacun de ceux-ci résultant du XORing <span class="pcrr8t-x-x-109">shrink </span>numéros consécutifs dans le “sparse hash”.
+La méthode <span class="pcrr8t-x-x-109">KnotHash::getHash() </span>est fournie - sauf pour l’implémentation du tour de base, qui fait
+l’objet du <span class="ptmb8t-x-x-109">Q3</span>.
+</p><p>
+</p><p>
+<a name="INF442-PM1#ex_3b"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_3b" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_3b" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+<!--l. 47--><p class="indent">
+     </p><dl class="description"><dt class="description">
+<span class="ptmb8t-x-x-109">Q3</span><sup><span class="cmsy-8">*</span></sup> </dt><dd class="description">(3 points) Implémentez la méthode <span class="pcrr8t-x-x-109">vector &lt;int&gt; KnotHash::singleRound (int</span>
+     <span class="pcrr8t-x-x-109">module, int&amp; skip, int&amp; position, int&amp; addpos)</span>. <br class="newline">Compte tenu de:
+                                                                                    
+
+                                                                                    
+     <!--l. 52--><p class="noindent">
+          </p><ul>
+          <li class="compactitem">la liste des caractères du vecteur <span class="pcrr8t-x-x-109">lgts</span>: vecteur de chars, public, dans l’objet <span class="pcrr8t-x-x-109">KnotHash</span>,
+          rempli par le constructeur,
+          </li>
+          <li class="compactitem">la position actuelle <span class="pcrr8t-x-x-109">position </span>commençant à 0
+          </li>
+          <li class="compactitem">et la taille du saut <span class="pcrr8t-x-x-109">skip </span>(à partir de 0),</li></ul>
+     <!--l. 91--><p class="noindent">cette méthode doit pour chaque caractère ayant une valeur comprise entre 0 et 255 designé par
+     <span class="pcrr8t-x-x-109">length</span>:
+          </p><ul>
+          <li class="compactitem">Inverser  l’ordre  de  <span class="pcrr8t-x-x-109">length </span>éléments  dans  la  liste  <span class="pcrr8t-x-x-109">list </span>(vecteur  privé),  tout  en
+          commençant par l’élément à la position actuelle <span class="pcrr8t-x-x-109">position</span>.
+          </li>
+          <li class="compactitem">Déplacer la position actuelle <span class="pcrr8t-x-x-109">position</span>, en avant, de <span class="pcrr8t-x-x-109">length </span>positions plus la longuer
+          de <span class="pcrr8t-x-x-109">skip</span>.
+          </li>
+          <li class="compactitem">Incrémenter <span class="pcrr8t-x-x-109">skip </span>(de 1).</li></ul>
+     <!--l. 97--><p class="noindent">Cette fonction retourne <span class="pcrr8t-x-x-109">list</span>. La liste étant circulaire alors: si la position actuelle <span class="pcrr8t-x-x-109">position </span>et
+     <span class="pcrr8t-x-x-109">length </span>essayent d’inverser des éléments au-delà de la fin de la liste, l’inversion doit prendre autant
+     d’éléments supplémentaires que pour l’avant de la liste. Si la position actuelle <span class="pcrr8t-x-x-109">position </span>dépasse la
+     fin de la liste, elle recommence depuis le début. Des valeurs de <span class="pcrr8t-x-x-109">length </span>supérieures à la taille
+     de la liste sont invalides. Notez que les paramètres <span class="pcrr8t-x-x-109">skip</span>, <span class="pcrr8t-x-x-109">position </span>et <span class="pcrr8t-x-x-109">addpos </span>sont
+     parsés <span class="ptmri8t-x-x-109">par r</span><span class="ptmri8t-x-x-109">éf</span><span class="ptmri8t-x-x-109">érence</span>, leurs valeurs doivent être conservés tout au long des différents tours
+     (c’est-à-dire, au long des appels consécutifs à <span class="pcrr8t-x-x-109">singleRound ()</span>). Vous pouvez vous
+     servir de <span class="pcrr8t-x-x-109">newlist </span>et <span class="pcrr8t-x-x-109">temp </span>(vecteurs privés) comme vecteurs intérmediaires dans votre
+     implémentation.</p></dd></dl>
+<!--l. 122--><p class="noindent"><span class="paragraphHead"><a id="x1-160003"></a><span class="ptmb8t-x-x-109">Example of operation</span></span>
+   Le fonctionnement de cette méthode est illustré ci-dessous, avec une liste plus petite: considérez une liste
+circulaire de cinq éléments, 0, 1, 2, 3, 4, ayant reçu des valeurs d’entrée <span class="pcrr8t-x-x-109">length </span>de 3, 4, 1, 5 (i.e. <span class="pcrr8t-x-x-109">lgts =</span>
+<span class="pcrr8t-x-x-109">[3, 4, 1, 5]</span>).
+     </p><ul>
+     <li class="compactitem">La liste commence par <span class="pcrr8t-x-x-109">[0] 1 2 3 4 </span>(les crochets indiquent la position actuelle).
+     </li>
+     <li class="compactitem">La première valeur de <span class="pcrr8t-x-x-109">length</span>, 3, sélectionne <span class="pcrr8t-x-x-109">([0] 1 2) 3 4 </span>(les parenthèses indiquent
+     que la sous-liste doit être inversée).
+     </li>
+     <li class="compactitem">Après avoir inversé cette section <span class="pcrr8t-x-x-109">012 </span>en <span class="pcrr8t-x-x-109">210</span>, on obtient <span class="pcrr8t-x-x-109">([2] 1 0) 3 4</span>.
+     </li>
+     <li class="compactitem">Ensuite, la position actuelle avance la valeur de <span class="pcrr8t-x-x-109">length</span>, 3, plus la taille de <span class="pcrr8t-x-x-109">skip</span>, 0: <span class="pcrr8t-x-x-109">2 1 0</span>
+     <span class="pcrr8t-x-x-109">[3] 4</span>. Enfin, la taille de <span class="pcrr8t-x-x-109">skip </span>augmente à 1.
+     </li>
+     <li class="compactitem">La  deuxième  valeur  de  <span class="pcrr8t-x-x-109">length</span>,  4,  sélectionne  une  section  qui  enroule  (wraps):  <span class="pcrr8t-x-x-109">2 1) 0</span>
+                                                                                    
+
+                                                                                    
+     <span class="pcrr8t-x-x-109">([3] 4</span>.
+     </li>
+     <li class="compactitem">La sous-liste <span class="pcrr8t-x-x-109">3421 </span>est inversée pour former <span class="pcrr8t-x-x-109">1243</span>: <span class="pcrr8t-x-x-109">4 3) 0 ([1] 2</span>.
+     </li>
+     <li class="compactitem">La position actuelle avance par <span class="pcrr8t-x-x-109">length </span>plus la taille <span class="pcrr8t-x-x-109">skip</span>, un total de 5: la position ne bouge
+     pas car l’avancement recommence depuis le début (wrapping): <span class="pcrr8t-x-x-109">4 3 0 [1] 2</span>. La taille de
+     <span class="pcrr8t-x-x-109">size </span>s’incremente à 2.
+     </li>
+     <li class="compactitem">La troisième valeur de <span class="pcrr8t-x-x-109">length</span>, 1, sélectionne une sous-liste d’un seul élément, et l’inversion
+     n’a donc aucun effet.
+     </li>
+     <li class="compactitem">La position actuelle avance du valeur de <span class="pcrr8t-x-x-109">length </span>(1) plus la taille de <span class="pcrr8t-x-x-109">skip </span>(2): <span class="pcrr8t-x-x-109">4 [3] 0 1</span>
+     <span class="pcrr8t-x-x-109">2</span>. La taille de <span class="pcrr8t-x-x-109">skip </span>augmente à 3.
+     </li>
+     <li class="compactitem">La  quatrième  valeur  de  <span class="pcrr8t-x-x-109">length</span>,  5,  sélectionne  chaque  élément  à  partir  du  deuxième:  <span class="pcrr8t-x-x-109">4)</span>
+     <span class="pcrr8t-x-x-109">([3] 0 1 2</span>. L’inversion de cette sous-liste (de <span class="pcrr8t-x-x-109">30124</span>à <span class="pcrr8t-x-x-109">42103</span>) produit: <span class="pcrr8t-x-x-109">3) ([4] 2 1</span>
+     <span class="pcrr8t-x-x-109">0</span>.
+     </li>
+     <li class="compactitem">Finalement,  la  position  actuelle  avance  de  8  positions:  <span class="pcrr8t-x-x-109">3 4 2 1 [0]</span>.  La  taille  de  <span class="pcrr8t-x-x-109">skip</span>
+     augmente à 4.</li></ul>
+<!--l. 138--><p class="noindent">Vous pouvez tester votre programme de hash avec <span class="pcrr8t-x-x-109">test-hash-q3-hash.cpp</span>. Si vous avec complété <span class="ptmb8t-x-x-109">Q1</span>
+et <span class="ptmb8t-x-x-109">Q2</span>, le programme <span class="pcrr8t-x-x-109">./test-hash-q12-exch </span>va générer le fichier <span class="pcrr8t-x-x-109">logfile.txt</span>, qui contient les
+strings correspondant à tous les paquets échangés pendant l’exécution de <span class="pcrr8t-x-x-109">test-hash-q12-exch</span>. Si vous
+n’avez pas répondu à ces questions, vous pouvez toujours utiliser le fichier <span class="pcrr8t-x-x-109">log-model.txt</span>, qui a le
+contenu qui suit:
+                                                                                    
+
+                                                                                    
+   </p><div class="verbatim" id="verbatim-5">
+2,0,2,20
+&nbsp;<br>2,0,2,21
+&nbsp;<br>3,0,3,31
+&nbsp;<br>1,0,1,10
+&nbsp;<br>1,1,1,20
+</div>
+<!--l. 147--><p class="nopar">
+<!--l. 149--></p><p class="indent">   Vous pouvez utiliser ce fichier comme entrée de <span class="pcrr8t-x-x-109">test-exo2q3-hash</span>, avec <span class="pcrr8t-x-x-109">./test-hash-q3-hash</span>
+<span class="pcrr8t-x-x-109">log-model.txt</span>. La sortie doit être comme suit:
+                                                                                    
+
+                                                                                    
+   </p><div class="verbatim" id="verbatim-6">
+Filename&nbsp;:&nbsp;log-model.txt
+&nbsp;<br>
+&nbsp;<br>2,0,2,20&nbsp;:&nbsp;5834395c173dc70d8065601944d228cb
+&nbsp;<br>2,0,2,21&nbsp;:&nbsp;cf35cfecc94c795c806ed8c862669013
+&nbsp;<br>3,0,3,31&nbsp;:&nbsp;df33c8ab9980e0de06b9623393ae661d
+&nbsp;<br>1,0,1,10&nbsp;:&nbsp;d789347cb59dc72f32fe214ce4d66d28
+&nbsp;<br>1,1,1,20&nbsp;:&nbsp;9e66c030b4635f1fa156dacaf14d16d2
+</div>
+<p>
+</p><p>
+<a name="INF442-PM1#ex_3c"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_3c" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_3c" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+<!--l. 160--><p class="nopar">
+<!--l. 81--></p><p class="noindent">
+   </p><h3 class="sectionHead"><span class="titlemark">4    </span> <a id="x1-170004"></a>MPI: Somme de N premiers entiers pairs (4p)</h3>
+<!--l. 83--><p class="noindent">Dans le programme <span class="pcrr8t-x-x-109">Sumofevennumbers-a-completer.cpp</span>, écrire les parties manquantes du
+programme en MPI en utilisant MPI_Reduce qui calcule la somme de N premiers entiers pairs. Pour la
+vérification du résultat, vous pouvez utiliser la formule suivante : <span class="pcrr8t-x-x-109">n * (n + 1)</span>. Le programme nous
+permet donc de vérifier cette formule d’un point de vue empirique.
+<!--l. 88--></p><p class="indent">   Remarques:
+     </p><ul>
+     <li class="compactitem">par convention, 2 est considéré comme le premier entier pair,
+     </li>
+     <li class="compactitem">seul le processus racine lit N, entier de type ’unsigned int’,
+     </li>
+     <li class="compactitem">utilisez broadcast pour diffuser N à tous les processus,
+     </li>
+     <li class="compactitem">chaque processus est responsable de la somme d’un sous-ensemble des N entiers, les entiers
+     sont découpés en blocs équilibrés, tous de même taille, sauf le dernier qui peut être plus petit,
+     </li>
+     <li class="compactitem">attention à bien choisir le type dans l’appel de MPI_Reduce et le type de la variable globale où
+     la somme cumulée est stockée.</li></ul>
+<p>
+</p><p>
+<a name="INF442-PM1#ex_4a"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF442/TD/PM1/INF442-PM1-1.php#INF442-PM1#ex_4a" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF442-PM1#ex_4a" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+<p></p>
+    
+ 
+
+                                                                                    
+
+
+</body></html>
